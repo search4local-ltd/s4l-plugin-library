@@ -1,3 +1,5 @@
+![alt text](https://www.search4local.co.uk/wp-content/uploads/2018/11/S4L.png.png "Logo")
+
 # s4l-plugin-library
 
 Company Repository for the Elementor Plugin Library that includes various widgets and controls to be used. To request more widgets to be added speak with William Bray.
