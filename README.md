@@ -11,6 +11,6 @@ Company Repository for the Elementor Plugin Library that includes various widget
 3. Go to Plugins > Add New > Upload Plugin and upload the zip folder you've just downloaded.
 4. Install and Activate the plugin.
 5. Go into the Elementor Editor and begin editing a page or template.
-6. Scroll down untill you see the plugin. (Usually sits at the bottom of the general catagory.)
+6. Scroll down until you see the 'Search4Local Main' category
 7. Done! Sit back and enjoy a coffee!
 
