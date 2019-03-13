@@ -3,6 +3,9 @@ namespace S4LPluginLibrary\Widgets;
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
+use Elementor\Group_Control_Typography;
+use Elementor\Scheme_Color;
+use Elementor\Scheme_Typography;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -67,7 +70,7 @@ class Copyright_Text extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'general' ];
+		return [ 's4l-main' ];
 	}
 
 	/**
@@ -79,10 +82,12 @@ class Copyright_Text extends Widget_Base {
 	 * @access protected
 	 */
 	protected function _register_controls() {
+
 		$this->start_controls_section(
-			'section_title',
+			'content_section',
 			[
 				'label' => __( 'Content', 's4l-plugin-library' ),
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
 
@@ -143,6 +148,25 @@ class Copyright_Text extends Widget_Base {
 		);
 
 		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'section_title_type',
+			[
+				'label' 	=> __( 'Typography', 's4l-plugin-library' ),
+				'tab' 		=> Controls_Manager::TAB_STYLE,
+			]
+		);
+
+			$this->add_group_control(
+			Group_Control_Typography::get_type(),
+				[
+					'name' 		=> 'typography',
+					'scheme' 	=> Scheme_Typography::TYPOGRAPHY_1,
+					'selector' 	=> '{{WRAPPER}} .text',
+				]
+			);
+
+		$this->end_controls_section();
 	}
 
 		/**
@@ -155,24 +179,22 @@ class Copyright_Text extends Widget_Base {
 		 */
 	protected function render() {
 		$settings = $this->get_settings_for_display();
-		$this->add_inline_editing_attributes( 'company', 'none' );
-		$this->add_inline_editing_attributes( 'area', 'none' );
 		?>
-		<span id="footer-copy" class="all" style="color:<?php echo $settings['text_color']?>;font-family:sans-serif;font-size:14px"> ©
-			<span id="copy-date"></span> ·
-			<a href="/" class="link" style="color:<?php echo $settings['link_color']?>;text-decoration:none">
+		<span id="footer-copy" class="all text" style="color:<?php echo $settings['text_color']?>;font-family:sans-serif;font-size:14px"> ©
+			<span id="copy-date" class="text"></span> ·
+			<a href="/" class="link text" style="color:<?php echo $settings['link_color']?>;text-decoration:none">
 				<span <?php echo $this->get_render_attribute_string( 'company' ); ?>> <?php echo $settings['company']; ?></span>
 			</a>
 			-
-			<a class="link" style="color:<?php echo $settings['link_color']?>;text-decoration:none" href="https://www.search4local.co.uk/website-design" target="_blank" rel="noopener">
-				<span class="all" <?php echo $this->get_render_attribute_string( 'area' ); ?>> <?php echo $settings['area']; ?></span> Web Design by Search4Local
+			<a class="link text" style="color:<?php echo $settings['link_color']?>;text-decoration:none" href="https://www.search4local.co.uk/website-design" target="_blank" rel="noopener">
+				<span class="all text" <?php echo $this->get_render_attribute_string( 'area' ); ?>> <?php echo $settings['area']; ?></span> Web Design by Search4Local
 			</a>
 			<span style="float:right;text-align:right">
-				<a href="/cookie-privacy-policy"  class="link" style="color:<?php echo $settings['link_color']?>;text-decoration:none">
+				<a href="/cookie-privacy-policy"  class="link text" style="color:<?php echo $settings['link_color']?>;text-decoration:none">
 					Cookie &amp; Privacy Policy
 				</a>
 				-
-				<a href="/sitemap_index.xml"  class="link" style="color:<?php echo $settings['link_color']?>;text-decoration:none">
+				<a href="/sitemap_index.xml"  class="link text" style="color:<?php echo $settings['link_color']?>;text-decoration:none">
 					Sitemap
 				</a>
 			</span>

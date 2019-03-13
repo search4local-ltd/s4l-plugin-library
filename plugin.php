@@ -56,6 +56,19 @@ class Plugin {
 		}
 
 		/**
+		 * Register Categories
+		 * @since 1.0
+		 * @access public
+		 */
+		public function register_categories() {
+			\Elementor\Plugin::instance()->elements_manager->add_category(
+				's4l-main',
+				array( 'title'  => esc_html__( 'Search4Local Main', 's4l-plugin-library' ), ),
+				1
+			);
+		}
+
+		/**
 		 * Plugin class constructor
 		 * @since 1.0
 		 * @access public
@@ -63,6 +76,7 @@ class Plugin {
 		public function __construct() {
 			// Register widgets
 			add_action( 'elementor/widgets/widgets_registered', [ $this, 'register_widgets' ] );
+			add_action( 'elementor/init', [ $this, 'register_categories' ], 0 );
 		}
 
 }
