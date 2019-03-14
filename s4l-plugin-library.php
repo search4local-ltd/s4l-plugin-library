@@ -9,8 +9,9 @@
  * Text Domain: s4l-plugin-library
  */
 
- if( ! defined('ABSPATH') ) exit; // Exit if accessed directly
+if( ! defined('ABSPATH') ) exit; // Exit if accessed directly
 
+require_once( 'GitHubPluginUpdater.php' );
  /**
 	* Main S4L Plugin Library Class
 	* The init class that runs the plugin
@@ -74,6 +75,11 @@
 		 * @access public
 		 */
 		public function init() {
+
+			// Check for updates before anything else.
+			if ( is_admin() ) {
+				new GitHubPluginUpdater( basename( __FILE__, '.php' ), 'williambray', 's4l-plugin-library', '3267451bf4f8a06db3e755ddfb25dc69be83f356' );
+		}
 			// Check if Elementor installed and activated
 			if ( ! did_action( 'elementor/loaded' ) ) {
 				add_action( 'admin_notices', array( $this, 'admin_notice_missing_main_plugin' ) );
