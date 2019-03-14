@@ -91,6 +91,7 @@ class Copyright_Text extends Widget_Base {
 			]
 		);
 
+		// Color control for the standard text in the widget
 		$this->add_control(
 			'text_color',
 			[
@@ -101,11 +102,12 @@ class Copyright_Text extends Widget_Base {
 					'value' => \Elementor\Scheme_Color::COLOR_1,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .all' => 'color: {{VALUE}}',
+					'.all' => 'color: {{VALUE}}',
 				],
 			]
 		);
 
+		// Color control for the links in widget
 		$this->add_control(
 			'link_color',
 			[
@@ -116,11 +118,12 @@ class Copyright_Text extends Widget_Base {
 					'value' => \Elementor\Scheme_Color::COLOR_1,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .link' => 'color: {{VALUE}}',
+					'.link' => 'color: {{VALUE}}',
 				],
 			]
 		);
 
+		// Text control for Company Name
 		$this->add_control(
 			'company',
 			[
@@ -134,6 +137,7 @@ class Copyright_Text extends Widget_Base {
 			]
 		);
 
+		// Text control for company area
 		$this->add_control(
 			'area',
 			[
@@ -157,6 +161,7 @@ class Copyright_Text extends Widget_Base {
 			]
 		);
 
+		// Group control for the Typography for the whole widget
 			$this->add_group_control(
 			Group_Control_Typography::get_type(),
 				[
@@ -180,21 +185,21 @@ class Copyright_Text extends Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 		?>
-		<span id="footer-copy" class="all text" style="color:<?php echo $settings['text_color']?>;font-family:sans-serif;font-size:14px"> ©
+		<span id="footer-copy" class="all text" style="color:<?php echo $settings['text_color']?>;"> ©
 			<span id="copy-date" class="text"></span> ·
-			<a href="/" class="link text" style="color:<?php echo $settings['link_color']?>;text-decoration:none">
+			<a href="/" class="link text" style="color:<?php echo $settings['link_color']?>;">
 				<span <?php echo $this->get_render_attribute_string( 'company' ); ?>> <?php echo $settings['company']; ?></span>
 			</a>
 			-
-			<a class="link text" style="color:<?php echo $settings['link_color']?>;text-decoration:none" href="https://www.search4local.co.uk/website-design" target="_blank" rel="noopener">
+			<a class="link text" style="color:<?php echo $settings['link_color']?>;" href="https://www.search4local.co.uk/website-design" target="_blank" rel="noopener">
 				<span class="all text" <?php echo $this->get_render_attribute_string( 'area' ); ?>> <?php echo $settings['area']; ?></span> Web Design by Search4Local
 			</a>
 			<span style="float:right;text-align:right">
-				<a href="/cookie-privacy-policy"  class="link text" style="color:<?php echo $settings['link_color']?>;text-decoration:none">
+				<a href="/cookie-privacy-policy"  class="link text" style="color:<?php echo $settings['link_color']?>;">
 					Cookie &amp; Privacy Policy
 				</a>
 				-
-				<a href="/sitemap_index.xml"  class="link text" style="color:<?php echo $settings['link_color']?>;text-decoration:none">
+				<a href="/sitemap_index.xml"  class="link text" style="color:<?php echo $settings['link_color']?>;">
 					Sitemap
 				</a>
 			</span>
