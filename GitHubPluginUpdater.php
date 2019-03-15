@@ -111,8 +111,8 @@ class GitHubPluginUpdater {
 				$plugin = array(
 					'name'				=> $this->plugin["Name"],
 					'slug'				=> $this->basename,
-					'requires'					=> '3.3',
-					'tested'						=> '4.4.1',
+					'requires'					=> '5.0',
+					'tested'						=> '5.1.1',
 					'rating'						=> '100.0',
 					'num_ratings'				=> '0',
 					'downloaded'				=> '0',
