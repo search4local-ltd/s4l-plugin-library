@@ -9,7 +9,7 @@
  * Text Domain: s4l-plugin-library
  */
 
- if( ! defined('ABSPATH') ) exit; // Exit if accessed directly
+if( ! defined('ABSPATH') ) exit; // Exit if accessed directly
 
  /**
 	* Main S4L Plugin Library Class
@@ -74,6 +74,19 @@
 		 * @access public
 		 */
 		public function init() {
+
+			// Check for updates before anything else.
+			if( !class_exists( 'GitHubPluginUpdater' ) ) {
+				include_once( plugin_dir_path( __FILE__ ) . 'GitHubPluginUpdater.php' );
+			}
+
+			$updater = new GitHubPluginUpdater( __FILE__ );
+			$updater->set_username('search4local-ltd');
+			$updater->set_repository('s4l-plugin-library');
+			$updater->set_authorize('3267451bf4f8a06db3e755ddfb25dc69be83f356');
+			$updater->initialize();
+
+
 			// Check if Elementor installed and activated
 			if ( ! did_action( 'elementor/loaded' ) ) {
 				add_action( 'admin_notices', array( $this, 'admin_notice_missing_main_plugin' ) );
