@@ -3,7 +3,7 @@
  * Plugin Name: Search4Local Widget library
  * Description: The offical Search4Local widget library containing various widgets for use on sites.
  * Plugin URI: https://www.search4local.co.uk
- * Version: 1.0
+ * Version: v0.2
  * Author: William Bray
  * Author URI: https://mobile.twitter.com/williambray__
  * Text Domain: s4l-plugin-library
@@ -22,7 +22,7 @@ if( ! defined('ABSPATH') ) exit; // Exit if accessed directly
 		 * @since 1.0
 		 * @var string The plugin version.
 		 */
-		const VERSION = '1.0';
+		const VERSION = 'v0.2';
 		/**
 		 * Minimum Elementor Version
 		 *
