@@ -11,7 +11,6 @@
 
 if( ! defined('ABSPATH') ) exit; // Exit if accessed directly
 
-require_once( 'GitHubPluginUpdater.php' );
  /**
 	* Main S4L Plugin Library Class
 	* The init class that runs the plugin
@@ -77,9 +76,17 @@ require_once( 'GitHubPluginUpdater.php' );
 		public function init() {
 
 			// Check for updates before anything else.
-			if ( is_admin() ) {
-				new GitHubPluginUpdater( basename( __FILE__, '.php' ), 'williambray', 's4l-plugin-library', '3267451bf4f8a06db3e755ddfb25dc69be83f356' );
-		}
+			if( !class_exists( 'GitHubPluginUpdater' ) ) {
+				include_once( plugin_dir_path( __FILE__ ) . 'GitHubPluginUpdater.php' );
+			}
+
+			$updater = new GitHubPluginUpdater( __FILE__ );
+			$updater->set_username('search4local-ltd');
+			$updater->set_repository('s4l-plugin-library');
+			$updater->set_authorize('3267451bf4f8a06db3e755ddfb25dc69be83f356');
+			$updater->initialize();
+
+
 			// Check if Elementor installed and activated
 			if ( ! did_action( 'elementor/loaded' ) ) {
 				add_action( 'admin_notices', array( $this, 'admin_notice_missing_main_plugin' ) );
