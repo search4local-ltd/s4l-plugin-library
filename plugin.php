@@ -39,6 +39,7 @@ class Plugin {
 
 	 private function include_widgets_files() {
 		 require_once( __DIR__ . '/widgets/copyright-text.php' );
+		 require_once( __DIR__ . '/widgets/responsive-cta.php' );
 	 }
 
 	 /**
@@ -52,6 +53,7 @@ class Plugin {
 
 			// Register Widgets
 			\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Copyright_Text() );
+			\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Responsive_CTA() );
 		}
 
 		/**
