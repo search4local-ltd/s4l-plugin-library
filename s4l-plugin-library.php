@@ -3,7 +3,7 @@
  * Plugin Name: Search4Local Widget library
  * Description: The offical Search4Local widget library containing various widgets for use on sites.
  * Plugin URI: https://www.search4local.co.uk
- * Version: v1.0.2
+ * Version: v1.0.21
  * Author: Search4Local
  * Author URI: https://www.search4local.co.uk
  * Text Domain: s4l-plugin-library
