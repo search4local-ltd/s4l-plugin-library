@@ -16,7 +16,7 @@ define( 'S4L_PLUGIN__FILE__', __FILE__ );
 define( 'S4L_PLUGIN_BASE', plugin_basename( S4L_PLUGIN__FILE__ ) );
 define( 'S4L_PLUGIN_PATH',  plugin_dir_path( S4L_PLUGIN__FILE__ ));
 define( 'S4l_PLUGIN_URL', plugins_url( '/', S4L_PLUGIN__FILE__ ) );
-\o;
+
  /**
 	* Main S4L Plugin Library Class
 	* The init class that runs the plugin
