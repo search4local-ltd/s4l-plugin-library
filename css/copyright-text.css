@@ -1,0 +1,21 @@
+#footer-copy {
+	text-align: left;
+	float: left;
+}
+
+#policy-text {
+	width: auto;
+	text-align: right;
+	float: right;
+}
+
+@media (min-width:600px) {
+	#footer-copy {
+		text-align: center;
+	}
+
+	#policy-text {
+		width: 100%;
+		text-align: center;
+	}
+}

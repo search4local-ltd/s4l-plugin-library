@@ -195,7 +195,8 @@ class Copyright_Text extends Widget_Base {
 				<span class="all text" <?php echo $this->get_render_attribute_string( 'area' ); ?>> <?php echo $settings['area']; ?> Web Design</span>
 			</a>
 			<span class="all text">by Search4Local</span>
-			<span style="float:right;text-align:right">
+			<br><br>
+			<span id="policy-text">
 				<a href="/cookie-privacy-policy"  class="link text" style="color:<?php echo $settings['link_color']?>;">
 					Cookie &amp; Privacy Policy
 				</a>
@@ -236,7 +237,8 @@ class Copyright_Text extends Widget_Base {
 				<span class="all text" {{{ view.getRenderAttributeString( 'area' ) }}}>{{{ settings.area }}} Web Design</span>
 			</a>
 			<span class="all text">by Search4Local</span>
-			<span class="all text" style="float:right;text-align:right">
+			<br><br>
+			<span class="all text" id="policy-text">
 				<a href="/cookie-privacy-policy"  class="link" style="color:{{ settings.link_color}};text-decoration:none">
 					Cookie &amp; Privacy Policy
 				</a>
