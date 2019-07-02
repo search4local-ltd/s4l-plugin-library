@@ -3,7 +3,7 @@
  * Plugin Name: Search4Local Widget library
  * Description: The offical Search4Local widget library containing various widgets for use on sites.
  * Plugin URI: https://www.search4local.co.uk
- * Version: v1.0.21
+ * Version: v1.0.3
  * Author: Search4Local
  * Author URI: https://www.search4local.co.uk
  * Text Domain: s4l-plugin-library
@@ -28,7 +28,7 @@ define( 'S4l_PLUGIN_URL', plugins_url( '/', S4L_PLUGIN__FILE__ ) );
 		 * @since 1.0
 		 * @var string The plugin version.
 		 */
-		const VERSION = 'v1.0.2';
+		const VERSION = 'v1.0.3';
 		/**
 		 * Minimum Elementor Version
 		 *
@@ -110,7 +110,23 @@ define( 'S4l_PLUGIN_URL', plugins_url( '/', S4L_PLUGIN__FILE__ ) );
 			}
 			// Once we get here, We have passed all validation checks so we can safely include our plugin
 			require_once( 'plugin.php' );
+
+			// Register widget styles
+			add_action( 'elementor/frontend/after_enqueue_styles', array( $this, 'widget_styles' ) );
 		}
+
+		/**
+		 * Register widget styles
+		 * Register the widget styles when plugin is activated.
+		 * Add widget styles when creating a new widget with styles.
+		 * @since 1.0.3
+		 * @access public
+		 */
+		public function widget_styles() {
+			wp_register_style( 's4l-plugin-library', plugins_url('s4l-plugin-library/css/copyright-text.css') );
+			wp_enqueue_style( 's4l-plugin-library' );
+		}
+
 		/**
 		 * Admin notice
 		 *

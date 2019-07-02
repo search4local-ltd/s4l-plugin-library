@@ -185,7 +185,9 @@ class Copyright_Text extends Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 		?>
-		<span id="footer-copy" class="all text" style="color:<?php echo $settings['text_color']?>;"> ©
+		<span id="footer-copy" class="all text" style="color:<?php echo $settings['text_color']?>;">
+		<span id="company-text">
+		©
 			<span id="copy-date" class="text"></span> ·
 			<a href="/" class="link text" style="color:<?php echo $settings['link_color']?>;">
 				<span <?php echo $this->get_render_attribute_string( 'company' ); ?>> <?php echo $settings['company']; ?></span>
@@ -195,7 +197,7 @@ class Copyright_Text extends Widget_Base {
 				<span class="all text" <?php echo $this->get_render_attribute_string( 'area' ); ?>> <?php echo $settings['area']; ?> Web Design</span>
 			</a>
 			<span class="all text">by Search4Local</span>
-			<br><br>
+		</span>
 			<span id="policy-text">
 				<a href="/cookie-privacy-policy"  class="link text" style="color:<?php echo $settings['link_color']?>;">
 					Cookie &amp; Privacy Policy
@@ -227,7 +229,9 @@ class Copyright_Text extends Widget_Base {
 		view.addInlineEditingAttributes( 'company', 'none' );
 		view.addInlineEditingAttributes( 'area', 'none' );
 		#>
-		<span id="footer-copy" class="all text" style="color:{{ settings.text_color}};font-family:sans-serif;font-size:14px"> ©
+		<span id="footer-copy" class="all text" style="color:{{ settings.text_color}};font-family:sans-serif;font-size:14px">
+			<span class="all text" id="company-text">
+			©
 			<span class="all text" id="copy-date"></span> ·
 			<a href="/"  class="link" style="color:{{ settings.link_color}};text-decoration:none">
 				<span class="all text" {{{ view.getRenderAttributeString( 'company' ) }}}>{{{ settings.company }}}</>
@@ -237,7 +241,8 @@ class Copyright_Text extends Widget_Base {
 				<span class="all text" {{{ view.getRenderAttributeString( 'area' ) }}}>{{{ settings.area }}} Web Design</span>
 			</a>
 			<span class="all text">by Search4Local</span>
-			<br><br>
+			</span>
+
 			<span class="all text" id="policy-text">
 				<a href="/cookie-privacy-policy"  class="link" style="color:{{ settings.link_color}};text-decoration:none">
 					Cookie &amp; Privacy Policy
