@@ -193,9 +193,7 @@ class Copyright_Text extends Widget_Base {
 				<span <?php echo $this->get_render_attribute_string( 'company' ); ?>> <?php echo $settings['company']; ?></span>
 			</a>
 			-
-			<a class="link text" style="color:<?php echo $settings['link_color']?>;" href="https://www.search4local.co.uk/website-design" target="_blank" rel="noopener">
-				<span class="all text" <?php echo $this->get_render_attribute_string( 'area' ); ?>> <?php echo $settings['area']; ?> Web Design</span>
-			</a>
+			<span class="all text" <?php echo $this->get_render_attribute_string( 'area' ); ?>> <?php echo $settings['area']; ?> Web Design</span>
 			<span class="all text">by Search4Local</span>
 		</span>
 			<span id="policy-text">
@@ -237,9 +235,7 @@ class Copyright_Text extends Widget_Base {
 				<span class="all text" {{{ view.getRenderAttributeString( 'company' ) }}}>{{{ settings.company }}}</>
 			</a>
 			 -
-			<a  class="link" style="color:{{ settings.link_color}};text-decoration:none" href="https://www.search4local.co.uk/website-design" target="_blank" rel="noopener">
-				<span class="all text" {{{ view.getRenderAttributeString( 'area' ) }}}>{{{ settings.area }}} Web Design</span>
-			</a>
+			<span class="all text" {{{ view.getRenderAttributeString( 'area' ) }}}>{{{ settings.area }}} Web Design</span>
 			<span class="all text">by Search4Local</span>
 			</span>
 
