@@ -47,9 +47,10 @@ class GitHubPluginUpdater {
 		if( is_null( $this->github_response ) ) {
 			$request_uri = sprintf( 'https://api.github.com/repos/%s/%s/releases', $this->username, $this->repository );
 
-			if( $this->authorize_token ) {
-				$request_uri = add_query_arg( 'access_token', $this->authorize_token, $request_uri );
-			}
+			// Uncomment this if plugin library is made private again
+			// if( $this->authorize_token ) {
+			// 	$request_uri = add_query_arg( 'access_token', $this->authorize_token, $request_uri );
+			// }
 
 			$response = json_decode( wp_remote_retrieve_body( wp_remote_get( $request_uri ) ), true );
 
@@ -57,9 +58,10 @@ class GitHubPluginUpdater {
 				$response = current( $response );
 			}
 
-			if( $this->authorize_token ) {
-				$response['zipball_url'] = add_query_arg( 'access_token', $this->authorize_token, $response['zipball_url'] );
-			}
+			// Uncomment this if plugin library is made private again
+			// if( $this->authorize_token ) {
+			// 	$response['zipball_url'] = add_query_arg( 'access_token', $this->authorize_token, $response['zipball_url'] );
+			// }
 
 			$this->github_response = $response;
 
