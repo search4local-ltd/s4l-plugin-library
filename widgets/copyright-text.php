@@ -52,7 +52,7 @@ class Copyright_Text extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'icon-coding';
+		return 'eicon-coding';
 	}
 
 	/**
@@ -187,8 +187,6 @@ class Copyright_Text extends Widget_Base {
 		?>
 		<span id="footer-copy" class="all text" style="color:<?php echo $settings['text_color']?>;">
 		<span id="company-text">
-		©
-			<span id="copy-date" class="text"></span> ·
 			<a href="/" class="link text" style="color:<?php echo $settings['link_color']?>;">
 				<span <?php echo $this->get_render_attribute_string( 'company' ); ?>> <?php echo $settings['company']; ?></span>
 			</a>
@@ -205,7 +203,7 @@ class Copyright_Text extends Widget_Base {
 					Sitemap
 				</a>
 			</span>
-		<p style="font-size:10px;font-weight:400;">© <span id="copy-date" class="text"></span>. Search4local Ltd. The content of this website is owned by us and our client; copying of any content (including images) without our consent is in breach of our Terms & Conditions. | All rights Reserved</p>
+		<p style="font-size:10px;font-weight:400;">© <span id="copy-date"></span> - Search4local Ltd. The content of this website is owned by us and our client; copying of any content (including images) without our consent is in breach of our Terms & Conditions. | All rights Reserved</p>
 		<script>
 			var date = new Date().getFullYear();
 			let dateBoxes = document.querySelectorAll("#copy-date");
@@ -231,8 +229,6 @@ class Copyright_Text extends Widget_Base {
 		#>
 		<span id="footer-copy" class="all text" style="color:{{ settings.text_color}};font-family:sans-serif;font-size:14px">
 			<span class="all text" id="company-text">
-			©
-			<span class="all text" id="copy-date"></span> ·
 			<a href="/"  class="link" style="color:{{ settings.link_color}};text-decoration:none">
 				<span class="all text" {{{ view.getRenderAttributeString( 'company' ) }}}>{{{ settings.company }}}</>
 			</a>
@@ -250,7 +246,7 @@ class Copyright_Text extends Widget_Base {
 					Sitemap
 				</a>
 			</span>
-			<p style="font-size:10px;font-weight:400;">© <span id="copy-date" class="text"></span>. Search4local Ltd. The content of this website is owned by us and our client; copying of any content (including images) without our consent is in breach of our Terms & Conditions. | All rights Reserved</p>
+			<p style="font-size:10px;font-weight:400;">© <span id="copy-date"></span> - Search4Local Ltd. The content of this website is owned by us and our client; copying of any content (including images) without our consent is in breach of our Terms & Conditions. | All rights Reserved</p>
 		<script>
 			var date = new Date().getFullYear();
 			let dateBoxes = document.querySelectorAll("#copy-date");
