@@ -1,4 +1,4 @@
-![alt text](https://www.search4local.co.uk/wp-content/uploads/2018/11/S4L.png.png "Logo")
+![alt text](https://www.search4local.co.uk/wp-content/uploads/2020/06/Artboard-1-copy-11.png "Logo")
 
 # s4l-plugin-library
 
