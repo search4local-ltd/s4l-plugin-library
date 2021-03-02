@@ -123,6 +123,7 @@ class Copyright_Text extends Widget_Base {
 			]
 		);
 
+
 		// Text control for Company Name
 		$this->add_control(
 			'company',
@@ -148,6 +149,38 @@ class Copyright_Text extends Widget_Base {
 				],
 				'placeholder' => __( 'Enter your title', 's4l-plugin-library' ),
 				'default' => __( 'Exeter', 's4l-plugin-library' ),
+			]
+		);
+
+		// Text control for Company Service
+		$this->add_control(
+			'service',
+			[
+				'label' => __( 'Company Service', 's4l-plugin-library' ),
+				'type' => Controls_Manager::TEXTAREA,
+				'dynamic' => [
+					'active' => true,
+				],
+				'placeholder' => __( 'Enter company service', 's4l-plugin-library' ),
+				'default' => __( 'Web Design', 's4l-plugin-library' ),
+			]
+		);
+
+		$this->add_control(
+			'service_link',
+			[
+				'label' => __( 'Service Link', 's4l-plugin-library' ),
+				'type' => \Elementor\Controls_Manager::URL,
+				'placeholder' => __( 'https://www.search4local.co.uk/', 's4l-plugin-library' ),
+				'show_external' => true,
+				'dynamic' => [
+					'active' => true,
+				],
+				'default' => [
+					'url' => '',
+					'is_external' => true,
+					'nofollow' => true,
+				],
 			]
 		);
 
@@ -191,8 +224,12 @@ class Copyright_Text extends Widget_Base {
 				<span <?php echo $this->get_render_attribute_string( 'company' ); ?>> <?php echo $settings['company']; ?></span>
 			</a>
 			-
-			<span class="all text" <?php echo $this->get_render_attribute_string( 'area' ); ?>> <?php echo $settings['area']; ?> Web Design</span>
+			<a href="<?php echo $settings['service_link']['url']?>" class="link text" style="color:<?php echo $settings['link_color']?>;">
+				<span <?php echo $this->get_render_attribute_string( 'area' ); ?>> <?php echo $settings['area']; ?> </span>
+				<span <?php echo $this->get_render_attribute_string( 'service' ); ?>> <?php echo $settings['service']; ?></span>
+			</a>
 			<span class="all text">by Search4Local</span>
+
 		</span>
 			<span id="policy-text">
 				<a href="/cookie-privacy-policy"  class="link text" style="color:<?php echo $settings['link_color']?>;">
@@ -233,7 +270,10 @@ class Copyright_Text extends Widget_Base {
 				<span class="all text" {{{ view.getRenderAttributeString( 'company' ) }}}>{{{ settings.company }}}</>
 			</a>
 			 -
-			<span class="all text" {{{ view.getRenderAttributeString( 'area' ) }}}>{{{ settings.area }}} Web Design</span>
+			<a href="{{ settings.service_link.url}}"  class="link" style="color:{{ settings.link_color}};text-decoration:none"></a>
+				<span class="all text" {{{ view.getRenderAttributeString( 'area' ) }}}>{{{ settings.area }}}</span>
+				<span class="all text" {{{ view.getRenderAttributeString( 'service' ) }}}> {{{ settings.service }}}</span>
+			</a>
 			<span class="all text">by Search4Local</span>
 			</span>
 
