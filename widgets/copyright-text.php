@@ -267,7 +267,7 @@ class Copyright_Text extends Widget_Base {
 		<span id="footer-copy" class="all text" style="color:{{ settings.text_color}};font-family:sans-serif;font-size:14px">
 			<span class="all text" id="company-text">
 			<a href="/"  class="link" style="color:{{ settings.link_color}};text-decoration:none">
-				<span class="all text" {{{ view.getRenderAttributeString( 'company' ) }}}>{{{ settings.company }}}</>
+				<span class="all text" {{{ view.getRenderAttributeString( 'company' ) }}}>{{{ settings.company }}}</span>
 			</a>
 			 -
 			<a href="{{ settings.service_link.url}}"  class="link" style="color:{{ settings.link_color}};text-decoration:none"></a>
